@@ -274,6 +274,7 @@ class Darknet(nn.Module):
 
         fp = open(path, 'wb')
         self.header_info[3] = self.seen
+        self.header_info = self.header_info.astype(np.int32)
         self.header_info.tofile(fp)
 
         # Iterate through layers
